@@ -1,0 +1,1 @@
+return "Script got released! 🥳"
