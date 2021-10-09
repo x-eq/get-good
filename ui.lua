@@ -282,12 +282,13 @@ function library:CreateWindow(name, size, hidebutton)
     updateevent.Event:Connect(function(theme)
         window.Frame.BackgroundColor3 = theme.backgroundcolor
     end)
-
-    uis.InputBegan:Connect(function(key)
-        if key.KeyCode == window.hidebutton then
-            window.Frame.Visible = not window.Frame.Visible
-        end
-    end)
+    if window.hidebutton ~= "none" then
+        uis.InputBegan:Connect(function(key)
+            if key.KeyCode == window.hidebutton then
+                window.Frame.Visible = not window.Frame.Visible
+            end
+        end)
+    end
 
     local function checkIfGuiInFront(Pos)
         local objects = coregui:GetGuiObjectsAtPosition(Pos.X, Pos.Y)
