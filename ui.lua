@@ -363,6 +363,7 @@ function library:CreateWindow(name, size, hidebutton)
     updateevent.Event:Connect(function(theme)
         window.NameLabel.TextColor3 = theme.toptextcolor
         window.NameLabel.Font = theme.font
+        window.NameLabel.Text = window.name
         window.NameLabel.TextSize = theme.titlesize
     end)
 
